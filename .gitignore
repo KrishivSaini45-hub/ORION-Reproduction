@@ -1,0 +1,18 @@
+# Virtual environment
+orion_env/
+
+# Model checkpoints
+model/
+*.pth
+
+# Generated data
+maps_GT_test_new_3_data/
+
+# Python
+__pycache__/
+*.pyc
+
+# Backup files
+*_backup.py
+*_working.py
+*_original.py

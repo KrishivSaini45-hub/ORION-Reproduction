@@ -1,0 +1,20 @@
+Test: 09_30_0.051
+Total test: 5
+Number of agents: 3
+
+Average max length: 580.6306875465356
+Std max length: 144.73036094695013
+
+Average min length: 388.86487793026544
+Std min length: 62.647012222287586
+
+Average mean distance: 472.1316688068529
+Std mean distance: 79.80995507635943
+
+Average explored rate: 0.7317578609330968
+
+Average success rate: 1.0
+
+Fail episode number: []
+
+Average total step: 71.0

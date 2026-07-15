@@ -1,0 +1,21 @@
+ORION Reproduction
+
+Experiment : Run 01
+
+Agents : 3
+Number of Tests : 5
+
+Results
+
+Average Max Distance : 580.6306875465356
+Average Min Distance : 388.86487793026544
+Average Mean Distance : 472.1316688068529
+
+Average Explored Rate : 0.7317578609330968
+
+Average Success Rate : 1.0
+
+Average Total Steps : 71.0
+
+Status :
+PASS
