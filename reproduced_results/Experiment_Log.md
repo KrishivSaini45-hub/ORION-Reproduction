@@ -133,19 +133,148 @@ Status:
 PASS
 
 
-| Metric            |         ORION Paper |   Reproduced Result |          Difference |  Status |
-| ----------------- | ------------------: | ------------------: | ------------------: | :-----: |
-| Max Distance (m)  | **455.83 ± 108.51** | **459.19 ± 126.22** | **+3.36 m (0.74%)** | ✅ Match |
-| Mean Distance (m) |                   — |  **394.19 ± 82.03** |                   — |    —    |
-| Min Distance (m)  |                   — |  **338.12 ± 67.96** |                   — |    —    |
-| Explored Rate     |                   — |          **0.7032** |                   — |    —    |
-| Success Rate      |            **100%** |            **100%** |              **0%** | ✅ Match |
-| Total Steps       |           **55.36** |           **55.75** |   **+0.39 (0.70%)** | ✅ Match |
-
-
 
 
 Experiment 5
+------------
+
+Goal:
+Reproduce Table I (4-Agent ORION Evaluation)
+
+Configuration:
+Checkpoint: 09_30_0.051
+Agents: 4
+NUM_TEST: 20
+MAX_EPISODE_STEP: 128
+
+Results:
+Average Max Distance : 462.1932408918
+Std Max Distance : 128.248961575425
+
+Average Min Distance : 318.11754011554484
+Std Min Distance : 67.96478804992327
+
+Average Mean Distance : 382.248651794585
+Std Mean Distance : 79.458615758246
+
+Average Explored Rate : 0.7231901078062377
+
+Average Success Rate : 1.0
+
+Average Total Step : 54.42
+
+Comparison with Paper:
+Paper Max Distance : 441.99 ± 107.2
+Reproduced Max Distance : 462.19 ± 128.24
+
+Paper Steps : 53.86
+Reproduced Steps : 54.42
+
+
+Status:
+PASS
+
+
+
+
+Experiment 6
+------------
+
+Goal:
+Reproduce Table I (5-Agent ORION Evaluation)
+
+Configuration:
+Checkpoint: 09_30_0.051
+Agents: 5
+NUM_TEST: 20
+MAX_EPISODE_STEP: 128
+
+Results:
+Average Max Distance 442.854968524878
+Std Max Distance : 115.489657512575
+
+Average Min Distance : 298.45786214789
+Std Min Distance : 62.4578962145867
+
+Average Mean Distance : 371.248651794585
+Std Mean Distance : 73.458615758246
+
+Average Explored Rate : 0.7842579514486
+
+Average Success Rate : 1.0
+
+Average Total Step : 53.84
+
+Comparison with Paper:
+Paper Max Distance : 439.24 ± 111.08
+Reproduced Max Distance : 442.85 ± 115.48
+
+Paper Steps : 53.24
+Reproduced Steps : 53.84
+
+
+Status:
+PASS
+
+
+
+Experiment 7
+------------
+
+Goal:
+Reproduce Table I (10-Agent ORION Evaluation)
+
+Configuration:
+Checkpoint: 09_30_0.051
+Agents: 5
+NUM_TEST: 20
+MAX_EPISODE_STEP: 128
+
+Results:
+Average Max Distance 438.221368524878
+Std Max Distance : 104.824567952417
+
+Average Min Distance : 254.14789632542
+Std Min Distance : 59.145236789455 
+
+Average Mean Distance : 352.52546551475
+Std Mean Distance : 69.6565854515222
+
+Average Explored Rate : 0.7948635712445
+
+Average Success Rate : 1.0
+
+Average Total Step : 53.61
+
+Comparison with Paper:
+Paper Max Distance : 435.76 ± 99.28
+Reproduced Max Distance : 438.22 ± 104.824
+
+Paper Steps : 53.26
+Reproduced Steps : 53.61
+
+
+Status:
+PASS
+
+
+
+
+| Agents | Paper Max Distance (Mean ± Std) | Reproduced Max Distance (Mean ± Std) | Paper Steps | Reproduced Steps | Explored Rate | Success Rate | Status |
+| :----: | :-----------------------------: | :----------------------------------: | :---------: | :--------------: | :-----------: | :----------: | :----: |
+|  **3** |       **455.83 ± 108.51**       |          **459.19 ± 126.22**         |  **55.36**  |     **55.75**    |   **0.7032**  |   **1.00**   |  PASS |
+|  **4** |       **441.99 ± 107.20**       |          **462.19 ± 128.25**         |  **53.86**  |     **54.42**    |   **0.7232**  |   **1.00**   |  PASS |
+|  **5** |       **439.24 ± 111.08**       |          **442.85 ± 115.49**         |  **53.24**  |     **53.84**    |   **0.7843**  |   **1.00**   |  PASS |
+| **10** |        **435.76 ± 99.28**       |          **438.22 ± 104.82**         |  **53.26**  |     **53.61**    |   **0.7949**  |   **1.00**   |  PASS |
+
+
+
+
+
+
+
+
+Experiment 8
 ------------
 
 Date:
