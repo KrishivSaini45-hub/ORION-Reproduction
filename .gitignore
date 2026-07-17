@@ -7,7 +7,7 @@ model/
 
 # Generated data
 maps_GT_test_new_3_data/
-
+reproduced_results_table1_backup/
 # Python
 __pycache__/
 *.pyc
