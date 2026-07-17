@@ -1,17 +1,3 @@
-# Context_Aware_Navigation
-### Public code and datasets for <a href="https://openreview.net/pdf?id=kSXh83gWWy">Context-Aware Deep Reinforcement Learning for Autonomous Robotic Navigation in Unknown Area</a>, which has been accepted for presentation at the 7th Conference on Robot Learning (CoRL 2023).
-
-we propose a learning-based framework for autonomous navigation in unknown areas, which employs a context-aware policy network to achieve efficient decision-making (i.e., maximize the likelihood of finding the shortest route towards the target destination). Our agent learns a reactive policy over the next waypoint to travel to, in a constantly expanding graph over the agent’s partial map of the environment. We rely on an attention-based neural network to allow the agent to reason about its entire belief at multiple spatial scales, and form a context embedding, which it then uses to sequence local movement decisions informed by long-term objectives.
-<center class="half">
-    <img src="utils/model.png"/>
-</center>
-
-## Demos
-
-<div style="text-align: center;">
-   <img src="utils/demo1.gif" width="370"/><img src="utils/demo2.gif" width="370"/>
-</div>
-
 ## Run
 ### Files
 * `parameters.py` - Training parameters.
@@ -41,22 +27,4 @@ we propose a learning-based framework for autonomous navigation in unknown areas
 1. Set test parameters in `test_parameters.py`.
 2. Run `python test_driver.py`
 
-## Citation
-If you find our work helpful or enlightening, feel free to cite our paper:
-```
-@inproceedings{liang2023context,
-  title={Context-Aware Deep Reinforcement Learning for Autonomous Robotic Navigation in Unknown Area},
-  author={Liang, Jingsong and Wang, Zhichen and Cao, Yuhong and Chiun, Jimmy and Zhang, Mengqi and Sartoretti, Guillaume Adrien},
-  booktitle={Conference on Robot Learning},
-  pages={1425--1436},
-  year={2023},
-  organization={PMLR}
-}
-```
-## Authors
-[Jingsong Liang](https://github.com/JingsongLiang),
-[Zhichen Wang](), 
-[Yuhong Cao](https://github.com/caoyuhong001), 
-[Jimmy Chiun](), 
-[Mengqi Zhang](), 
-[Guillaume Sartoretti](https://github.com/gsartoretti)
+
