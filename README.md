@@ -10,17 +10,28 @@ The goal of this project is to reproduce the experimental results reported in th
 
 ---
 
-## Features
+## Project Files
 
-- Reproduced the evaluation pipeline for Table I
-- Verified the official implementation
-- Investigated the ORION architecture
-- Documented implementation details
-- Prepared the ROS2 setup required for Table II
+| File/Folder | Description |
+|-------------|-------------|
+| `driver.py` | Trains the ORION model from scratch using the configured datasets and parameters.|
+| `test_driver.py` | Runs evaluation to reproduce the results reported in Table I. |
+| `agent.py` | Implements the ORION agent, including observation processing and action selection. |
+| `env.py` | Simulates the multi-robot exploration environment and reward mechanism. |
+| `test_worker.py` | Executes evaluation episodes in parallel during testing. |
+| `parameter.py` | Stores all configurable hyperparameters and experiment settings. |
+| `model/` | Contains the neural network architecture used by ORION. |
+| `maps_GT/` | Stores ground-truth occupancy maps used by the simulator. |
+| `maps_priori/` | Stores prior occupancy maps available before exploration begins. |
+| `results/` | Contains training logs and evaluation outputs. |
+| `reproduced_results/` | Stores reproduced experimental results for different team sizes. |
+| `checkpoints/` | Contains pretrained model checkpoints used for evaluation (if available). |
 
 ---
 
 ## Repository Structure
+
+```text
 ORION/
 │
 ├── agent.py
@@ -35,42 +46,76 @@ ORION/
 ├── reproduced_results/
 ├── results/
 └── README.md
+```
 
 
----
-
-## Environment
+## Requirements
 
 - Ubuntu 22.04
 - Python 3.10
 - PyTorch
-- NumPy
+- CUDA (optional)
+
+
+### Installation
+
+```bash
+conda create -n orion python=3.10 -y
+conda activate orion
+
+pip install torch torchvision
+pip install opencv-python scikit-image imageio pandas
+pip install matplotlib tensorboard
+pip install ray wandb
+```
+Clone this repository and navigate to the directory.
+```bash
+git clone https://github.com/KrishivSaini45-hub/ORION-Reproduction.git
+cd ORION-multi-agent-navigation
+```
+
+### Datasets and Checkpoints
+**Training datasets** are provided in:
+- `maps_priori/`
+- `maps_GT/`
+
+**Evaluation datasets** are provided in:
+- `maps_priori_test_new_{n}/`
+- `maps_GT_test_new_{n}/`
+
+where `{n}` denotes the number of agents in the team.
+
+The training set consists of **simple maps with 3 agents only**.  
+During evaluation, ORION scales to **larger teams (3, 4, 5, and 10 agents)** and **more complex environments** without additional training.
+
+
+
+### Configure the Experiment
+
+Modify `parameter.py` to set:
+- Number of agents
+- Checkpoint path
+- Test dataset
+- Evaluation parameters
+
+### Run Table I Reproduction
+
+```bash
+python test_driver.py
+```
+
+### Train the ORION Model
+
+```bash
+python driver.py
+```
 
 ---
 
-## Installation
+## Reference
 
-```bash
-git clone https://github.com/KrishivSaini45-hub/ORION-Reproduction.git
-cd ORION-Reproduction
-pip install -r requirements.txt
+This reproduction is based on the official implementation released by the authors.
 
+**Paper:**
 
-## Running Evaluation
-python test_driver.py
-
-## Results
-
-🚧 This section will be updated after completing the final evaluation and analysis.
-
-## Future Work
-Complete detailed analysis of Table I
-Reproduce Table II
-Compare reproduced metrics with the original paper
-Perform additional statistical evaluation
-
-## Acknowledgements
-This project is based on the official ORION implementation provided by the original authors.
-
-Paper:
-ORION: Option-Regularized Deep Reinforcement Learning for Cooperative Multi-Agent Online Navigation
+> ORION: Option-Regularized Deep Reinforcement Learning for Cooperative Multi-Agent Online Navigation
