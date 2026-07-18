@@ -57,21 +57,26 @@ ORION/
 - CUDA (optional)
 
 
-### Installation
+## Installation
 
-```bash
-conda create -n orion python=3.10 -y
-conda activate orion
+Clone the repository:
 
-pip install torch torchvision
-pip install opencv-python scikit-image imageio pandas
-pip install matplotlib tensorboard
-pip install ray wandb
-```
-Clone this repository and navigate to the directory.
 ```bash
 git clone https://github.com/KrishivSaini45-hub/ORION-Reproduction.git
-cd ORION-multi-agent-navigation
+cd ORION-Reproduction/ORION
+```
+
+### Create a virtual environment
+
+```bash
+python3 -m venv orion_env
+source orion_env/bin/activate
+```
+
+### Install dependencies
+
+```bash
+pip install -r requirements.txt
 ```
 
 ### Datasets and Checkpoints
