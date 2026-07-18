@@ -1,0 +1,16 @@
+# CMake
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+
+# Executable
+lns
+
+# Generated outputs
+paths.txt
+*-LNS.csv
+*-initLNS.csv
+
+# Optional
+compile_commands.json
